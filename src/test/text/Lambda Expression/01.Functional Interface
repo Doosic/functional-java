@@ -1,0 +1,27 @@
+* Functional Interface
+
+    Function Package
+    java.util.function
+
+        BiConsumer<T,U>         BiFunction<T,U,R>       BinaryOperator<T> UnaryOperator<T>
+        BiPredicate<T,U>        BooleanSupplier         Consumer<T>
+        DoubleBinaryOperator    DoubleConsumer          DoubleFunction<R>
+        DoublePredicate         DoubleSupplier          DoubleToIntFunction
+        DoubleToLongFunction    DoubleUnaryOperator     Function<T,R>
+        IntBinaryOperator       IntConsumer             IntFunction<R>
+        IntPredicate            IntSupplier             IntToDoubleFunction
+        IntToLongFunction       IntUnaryOperator        LongBinaryOperator
+        LongConsumer            LongFunction<R>         LongPredicate
+        LongSupplier            LongToDoubleFunction    LongToIntFunction
+        LongUnaryOperator       ObjDoubleConsumer<T>    ObjIntConsumer<T>
+        ObjLongConsumer<T>      Predicate<T>            Supplier<T>
+        ToDoubleBiFunction<T,U> ToDoubleFunction<T>     ToIntBiFunction<T,U>
+        ToIntFunction<T>        ToLongBiFunction<T,U>   ToLongFunction<T>
+
+
+    @FunctionalInterface
+    public interface Function<T, R> {   => T 라는 값을 받아 R 이라는 값을 리턴한다.
+        R apply(T t);
+    }
+    T 는 인풋타입
+    R 은 리턴타입
