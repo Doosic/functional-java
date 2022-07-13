@@ -1,0 +1,16 @@
+* 한 걸음씩 람다로
+    1.함수의 이름
+    2.반환값의 타입 (return type)
+    3.매개변수 (parameters)
+    4.함수의 내용 (body)
+
+
+    - Lambda Expression (이름이 없는 함수 Anonymous function)
+
+        (Integer x) -> {
+            return x + 10;
+        }
+
+      1.매개변수의 타입이 유추 가능할 경우 타입 생략 가능
+      2.매개변수가 하나일 경우 괄호 생략 가능
+      3.바로 리턴하는 경우 중괄호 생략 가능

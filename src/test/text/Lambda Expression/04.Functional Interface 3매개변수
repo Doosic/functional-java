@@ -1,0 +1,19 @@
+* Functional Interface
+    함수의 뼈대
+
+    - 단 하나의 abstract method 만을 가지는 인터페이스
+      (Single Abstract Method interface)
+    - Default method 와 static method 는 이미 구현이 되어있으므로 있어도 괜찮음
+    - java.lang.Runnable, java.util.Comparator, java.util.concurrent.Callable, etc
+
+    @FunctionalInterface
+    public Interface Function<T, R> {
+        R apply (T t);
+
+        default <V> Function<V, R> compose(Function<? super V, ? extends T> before) {...}
+        default <V> Function<V, R> andThen(Function<? super V, ? extends T> before) {...}
+        default <V> Function<V, R> identity() {...}
+    }
+
+    아쉽게도 3 매서드는 @FunctionalInterface 를 직접 구현하지 못한다.
+    자바 8, 11 둘다 동일 하다.
