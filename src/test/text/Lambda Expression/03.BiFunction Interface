@@ -1,0 +1,12 @@
+* BiFunction Interface
+
+    - 매개변수가 두 개일 때는???
+
+        @FunctionalInterface
+        public interface BiFunction<T, U, R> {
+            R apply(T t, U u);
+        }
+
+    - 매개변수를 최대 2개까지 받을 수 있다.
+      3개를 받는것은 직접 만들어야 한다.
+      하지만 보통 3개까지 받는일은 드물다.
