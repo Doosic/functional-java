@@ -1,0 +1,36 @@
+* Predicate (진실 혹은 거짓)
+
+    @FunctionalInterface
+    public interface Predicate<T> {
+        boolean test(T t);
+    }
+    어떠한 인풋을 받아 true, false 를 나타낼때에 사용하는 용도이다.
+
+    Function Package
+        java.util.function
+
+            BiConsumer<T,U>         BiFunction<T,U,R>       BinaryOperator<T> UnaryOperator<T>
+            BiPredicate<T,U>        BooleanSupplier         Consumer<T>
+            DoubleBinaryOperator    DoubleConsumer          DoubleFunction<R>
+            DoublePredicate         DoubleSupplier          DoubleToIntFunction
+            DoubleToLongFunction    DoubleUnaryOperator     Function<T,R>
+            IntBinaryOperator       IntConsumer             IntFunction<R>
+            IntPredicate            IntSupplier             IntToDoubleFunction
+            IntToLongFunction       IntUnaryOperator        LongBinaryOperator
+            LongConsumer            LongFunction<R>         LongPredicate
+            LongSupplier            LongToDoubleFunction    LongToIntFunction
+            LongUnaryOperator       ObjDoubleConsumer<T>    ObjIntConsumer<T>
+            ObjLongConsumer<T>      Predicate<T>            Supplier<T>
+            ToDoubleBiFunction<T,U> ToDoubleFunction<T>     ToIntBiFunction<T,U>
+            ToIntFunction<T>        ToLongBiFunction<T,U>   ToLongFunction<T>
+
+            여기까지 배우면 위에것들이 뭐하는 것들인지 슬슬보인다.
+            Supplier -> 인풋없이 리턴값만 가지는것
+            Consumer -> 인풋을 받아 리턴하는것
+            BiConsumer -> 인풋 인자를 2개 받을수 있는것
+            Predicate -> 인풋 인자를 받아 true, false 를 반환해 주는것
+
+            그런데 왜 앞에 타입이 붙은것들이 있을까? 위의 것들로 다 할 수 있는데...
+            왜냐하면 Integer 는 int 를 박싱해 놓은것이기 때문에 메모리를 훨씬 더 많이
+            잡아 먹기 때문이다. 그렇기에 int 만 다룰경우 또는 Long 만 다룰경우 메모리는
+            아끼며 사용할 수 있게하기위해 intSupplier 같은것들이 있는것이다.
