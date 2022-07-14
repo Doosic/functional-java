@@ -1,0 +1,8 @@
+* Consumer (받기만한다)
+
+    @FunctionalInterface
+    public interface Consumer<T> {
+        void accept<T t>;
+    }
+
+    무언가를 합칠때에 유연하게 사용할 수 있는것 같다.
