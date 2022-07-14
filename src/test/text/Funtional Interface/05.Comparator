@@ -1,0 +1,10 @@
+* Comparator 비교를 위한 인터페이스
+
+    @FunctionalInterface
+    public interface Comparator<T> {
+        int compare (T o1, T  o2);
+    }
+
+    - 음수면 o1 < o2
+    - 0이면 o1 = o2
+    - 양수면 o1 > o2

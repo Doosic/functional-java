@@ -1,0 +1,10 @@
+* Supplier(공급하다)
+    아낌없이 주는 나무 (공급하는 인터페이스들을 뜻한다)
+
+    @FunctionalInterface
+    public interface Supplier<T> {
+        T get();                    => 인풋이 없이 리턴값만 가진다.
+    }
+
+
+
