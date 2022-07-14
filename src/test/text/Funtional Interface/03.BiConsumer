@@ -1,0 +1,7 @@
+* BiConsumer
+    두개의 인풋 파라미터를 가진 Consumer 이다.
+
+    @FunctionalInterface
+    public interface BiConsumer<T,U> {
+        void accept(T t, U u);
+    }
