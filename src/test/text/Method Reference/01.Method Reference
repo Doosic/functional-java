@@ -1,0 +1,36 @@
+* Method Reference
+    기존에 만들어져있던 메소드 및 컨스트럭터를 지정하는 방법에 대해서
+    배워보자
+
+    - 메서드 레퍼런스
+        1.기존에 이미 선언되어있는 메서드를 지정하고 싶을 때
+        2.:: 오퍼레이터 사용
+        3.생략이 많기 때문에 사용할 메서드의 매개변수의 타입과 리턴 타입을
+          미리 숙지해야 함
+
+
+    - 메서드 레퍼런스의 4가지 케이스
+        1.클래스의 static method 를 지정할 때
+          ClassName::staticMethodName
+
+        2.선언 된 객체의 instance method 를 지정할 때
+          objectName::instanceMethodName
+
+        3.객체의 instance method 를 지정할 때
+          ClassName::instanceMethodName
+
+        4.클래스의 constructor 를 지정할 때
+          ClassName::new
+
+
+    - 메서드 레퍼런스 1,2번 케이스
+        1.ClassName::staticMethodName
+          클래스의 static method (정적 메소드)를 지정할 때
+          Function<String, Integer> str2int = Integer::parseInt;
+          int five = str2int.apply("5");
+
+        2.objectName::instanceMethodName
+          이미 선언되어있는 객체의 instance method 를 지정할 때
+          String str = "hello";
+          Predicate<String> equalsToHello = str::equals;
+          boolean helloEqualsWorld = equalsHello.test("world");
