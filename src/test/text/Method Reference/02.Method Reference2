@@ -1,0 +1,11 @@
+* Method Reference2
+    메서드 레퍼런스의 또 다른 케이스
+
+    - 해당 클래스의 인스턴스를 매개변수로 넘겨
+      메서드를 실행해주는 함수
+
+      Function<String, Integer> strLength = String::length;
+      int length = strLength.apply("Hello world!")
+
+      BiPredicate<String, String> strEquals = String::equals;
+      boolean result = strEquals.test("hello", "world");
