@@ -1,0 +1,6 @@
+* Filter
+
+    - 만족하는 데이터만 걸러내는데 사용
+    - Predicate 에 true 를 반환하는 데이터만 존재하는 stream 을 리턴
+
+    Stream<T> filter(Predicate<? super T> predicate);
