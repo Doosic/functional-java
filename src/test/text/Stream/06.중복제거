@@ -1,0 +1,4 @@
+* Distinct 중복제거
+
+    - 중복되는 데이터가 제거된 stream 을 리턴
+        Stream<T> distinct();
