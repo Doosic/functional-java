@@ -1,0 +1,10 @@
+* Stream 의 구성요소
+
+    Source (소스)             Intermediate Operations (중간처리)          Terminal Operation (종결처리)
+    컬렉션, 배열 등             0개 이상의 filter, map 등의 중간처리          Collect, reduce 등등
+
+    1.소스(어떠한 리스트)를 받아
+    2.중간처리(변형 및 필터)를 하고
+    3.종결처리(리스트로 반환 등..)를 해준다.
+
+    - 여러가지의 중간 처리를 이어붙이는 것이 가능하다.
