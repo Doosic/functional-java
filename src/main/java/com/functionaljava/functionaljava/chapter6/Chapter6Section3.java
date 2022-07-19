@@ -10,18 +10,19 @@ import java.util.stream.Stream;
 
 import static com.functionaljava.functionaljava.chapter6.model.Order.OrderStatus.*;
 
-public class Chapter6Section2 {
+public class Chapter6Section3 {
 
     public static void main(String[] args) {
-        Stream<Integer> numberStream = Stream.of(3, -5, 7, 10, -3);
-        Stream<Integer> filteredNumberStream = numberStream.filter(x -> x > 0);
-        List<Integer> filteredNumbers = filteredNumberStream.collect(Collectors.toList());
-//        System.out.println(filteredNumbers);
-
-        List<Integer> newFilteredNumbers = Stream.of(3, -5, 7, 10, -3)
-                .filter(x -> x > 0)
+        List<Integer> numberList = Arrays.asList(3, 6, -4);
+        List<Integer> numberStream = numberList.stream()
+                .map(x -> x * 2)
                 .collect(Collectors.toList());
-//        System.out.println(newFilteredNumbers);
+        System.out.println(numberStream);
+
+        List<String> numberListStream = numberList.stream()
+                .map(x -> "Number is " + x)
+                .collect(Collectors.toList());
+        System.out.println(numberListStream);
 
         User user1 = new User()
                 .setId(101)
@@ -38,40 +39,47 @@ public class Chapter6Section2 {
                 .setName("Charlie")
                 .setVerified(false)
                 .setEmailAddress("charlie@naver.co.kr");
-
         List<User> users = Arrays.asList(user1, user2, user3);
 
-        List<User> verifiedUsers = users.stream()
-                .filter(User::isVerified)
-                .collect(Collectors.toList());
-        System.out.println(verifiedUsers);
+    /*
+        간단하게 바꾸기 전의 방법 (사용자의 이메일만 추출하기)
+        Stream<User> userStream = users.stream();
+        Stream<String> userEmailStream = userStream.map(User::getEmailAddress);
+        List<String> emailAddresses = userEmailStream.collect(Collectors.toList());
+    */
 
-        List<User> unverifiedUsers = users.stream()
-                .filter(user -> !user.isVerified())
+        List<String> userEmils = users.stream()
+                .map(User::getEmailAddress)
                 .collect(Collectors.toList());
-        System.out.println(unverifiedUsers);
+        System.out.println(userEmils);
 
         Order order1 = new Order()
                 .setId(1001)
-                .setStatus(CREATED);
+                .setStatus(CREATED)
+                .setCreatedByUserId(101);
         Order order2 = new Order()
                 .setId(1002)
-                .setStatus(ERROR);
+                .setStatus(ERROR)
+                .setCreatedByUserId(103);
         Order order3 = new Order()
                 .setId(1003)
-                .setStatus(PROCESSED);
+                .setStatus(PROCESSED)
+                .setCreatedByUserId(102);
         Order order4 = new Order()
                 .setId(1004)
-                .setStatus(ERROR);
+                .setStatus(ERROR)
+                .setCreatedByUserId(104);
         Order order5 = new Order()
                 .setId(1005)
-                .setStatus(IN_PROGRESS);
-
+                .setStatus(IN_PROGRESS)
+                .setCreatedByUserId(101);
         List<Order> orders = Arrays.asList(order1, order2, order3, order4, order5);
-        //Filter orders in ERROR state
-        List<Order> filteredOrders = orders.stream()
-                .filter(order -> order.getStatus() == ERROR)
+
+        // TODO: 어떠한 유저가 만들었는지 유저의 리스트를 만들어보자
+        List<Long> orderUsers = orders.stream()
+                .map(Order::getCreatedByUserId)
                 .collect(Collectors.toList());
-        System.out.println(filteredOrders);
+        System.out.println(orderUsers);
+
     }
 }

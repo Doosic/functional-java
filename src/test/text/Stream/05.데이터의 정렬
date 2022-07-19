@@ -1,0 +1,7 @@
+* Sorted 데이터의 정렬
+
+    - 데이터가 순서대로 정렬된 stream 을 리턴
+    - 데이터의 종류에 따라 Comparator 가 필요할 수 있음
+
+    Stream<T> sorted();
+    Stream<T> sorted(Comparator<? super T> comparator);
