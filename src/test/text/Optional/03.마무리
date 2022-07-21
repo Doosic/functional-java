@@ -1,0 +1,8 @@
+* 마무리
+    1.Optional 은 null 일 수도, 아닐 수도 있는 오브젝트를 담을 때 사용
+    2.Optional 를 생성하고 추출하고 변환하는 operator 들
+        - of/ofNullable/empty
+        - get/orElse/orElseGet/orElseThrow
+        - isPresent
+        - ifPresent
+        - map/flatMap
