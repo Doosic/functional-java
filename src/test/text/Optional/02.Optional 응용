@@ -1,0 +1,11 @@
+* Optional 응용을 위해 알아야 할 것들
+
+    - public void ifPresent (Consumer<? super T> action)
+    - public <U> Optional<U> map(Function<? super T, ? extends U> mapper)
+    - public <U> Optional<U> flatMap(
+            Function<? super T, ? extends Optional<? extends U>> mapper)
+
+    1.ifPresent - Optional 이 null 이 아니라면 action 을 실행
+    2.map - Optional 이 null mapper 를 적용
+    3.flatMap - mapper 의 리턴 값이 또 다른 Optional 이라면 한 단계의 Optional
+      이 되도록 납작하게 해줌
