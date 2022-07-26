@@ -1,0 +1,21 @@
+* Stream 의 구성요소 리마인드 및 Max Min Count
+
+    Source(소스)[컬렉션,배열 등]
+    => Intermediate Operations(중간 처리)[0개 이상의 filter,map 등의 중간처리]
+    => Terminal Operations(종결 처리)[Collect, reduce 등]
+
+        - 종결 처리를 통해 최종 결과물을 도출
+        - 종결 처리의 실행이 필요할 때 중간 처리들도 비로소 실행
+          (Lazy Evaluation)
+
+
+    - Max, Min, Count
+      Stream 안의 데이터의 최대값/ 최소값/ 개수
+
+      Optional<T>  max(Comparator<? super T> comparator);
+      Optional<T>  min(Comparator<? super T> comparator);
+      long count();
+
+      - max - Stream 안의 데이터 중 최대값을 반환. Stream 이 비어있다면 빈 Optional 을 반환.
+      - min - Stream 안의 데이터 중 최소값을 반환. Stream 이 비어있다면 빈 Optional 을 반환.
+      - count - Stream 안의 데이터 개수를 반환.
