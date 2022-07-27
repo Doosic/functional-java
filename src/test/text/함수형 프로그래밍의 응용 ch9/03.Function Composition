@@ -1,0 +1,7 @@
+* Function Composition (함수 합성)
+
+    - 여러 개의 함수를 합쳐 하나의 새로운 함수로 만드는 것
+
+    java.util.function.Function
+    <V> Function<V, R> compose(Function<? super V, ? extends T> before)
+    <V> Function<T, V> andThen(Function<? super R, ? extends V> after)
