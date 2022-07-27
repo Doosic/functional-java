@@ -1,0 +1,9 @@
+* To Map
+
+    public static <T, K, U> Collector<T, ?, Map<K,U>> toMap(
+        Function<? super T, ? extends K> keyMapper,
+        Function<? super T, ? extends U> valueMapper)
+
+        - Stream 안의 데이터를 map 의 형태로 반환해주는 collector
+        - keyMapper - 데이터를 map 의 key 로 변환하는 Function
+        - valueMapper - 데이터를 map 의 value 로 변환하는 Function
