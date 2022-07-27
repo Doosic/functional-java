@@ -1,0 +1,7 @@
+* For Each
+
+    void forEach(Consumer<? super T> action);
+
+    - 제공된 action 을 Stream 의 각 데이터에 적용해주는 종결 처리 메서드
+    - Java 의 iterable 인터페이스에도 forEach 가 있기 때문에 Stream 의 중간
+      처리가 필요없다면 iterable collection(Set, List 등)에서 바로 쓰는 것도 가능
