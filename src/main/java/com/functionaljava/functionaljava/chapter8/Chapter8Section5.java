@@ -24,6 +24,7 @@ public class Chapter8Section5 {
         System.out.println(numberSet);
 
         // abs 를 통해 절대값으로 변경
+        // mapping(x, y) 앞의 인자값이 적용되고, 두번째 인자값의 타입으로 결과를 리턴
         List<Integer> absNumberList = Stream.of(3, 5, -3, 3, 4, 5)
                 .collect(Collectors.mapping(x -> Math.abs(x), Collectors.toList()));
         System.out.println(absNumberList);
