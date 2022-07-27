@@ -1,0 +1,21 @@
+* Reduce
+    - 주어진 함수를 반복 적용해 Stream 안의 데이터를 하나의 값으로 합치는 작업
+    - Max/Min/Count 도 사실 reduce 의 일종
+
+    Stream
+    x   y   z   ...     ...
+    f(x,y) => f(f(x,y),z) ...
+
+
+    1. Optional<T> reduce(BinaryOperator<T> accumulator);
+    2. T reduce (T identity, BinaryOperator<T> accumulator);
+    3. <U> U reduce(U identity,
+                 BiFunction<U, ? super T, U> accumulator,
+                 BinaryOperator<T> combiner);
+
+                 - reduce1 주어진 accumulator 를 이용해 데이터를 합침. Stream 이
+                   비어있을 경우 빈 Optional 을 반환.
+                 - reduce2 주어진 초기값과 accumulator 를 이용. 초기값이 있기 때문에
+                   항상 반환값이 존재.
+                 - reduce3 합치는 과정에서 타입이 바뀔 경우 사용. Map + reduce 로 대체 가능.
+                   (자주 쓰이지는 않는다)
